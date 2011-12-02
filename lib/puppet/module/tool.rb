@@ -110,10 +110,6 @@ Dir[Puppet::Module::Tool.root + 'vendor/*/lib'].each do |path|
   $LOAD_PATH.unshift(path)
 end
 
-# Load vendored libraries
-require 'facets/kernel/tap'
-require 'facets/kernel/returning'
-
 # Load rubygems, so we can load Puppet and parse version numbers
 require 'rubygems'
 

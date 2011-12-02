@@ -60,7 +60,7 @@ module Puppet::Module::Tool
     # Return an array of hashes representing this +type+'s attrs of +kind+
     # (e.g. :param or :property), each containing :name and :doc.
     def attr_doc(type, kind)
-      returning([]) do |attrs|
+      [].tap do |attrs|
         type.allattrs.each do |name|
           if type.attrtype(name) == kind && name != :provider
             attrs.push(:name => name, :doc => type.attrclass(name).doc)
@@ -72,7 +72,7 @@ module Puppet::Module::Tool
     # Return an array of hashes representing this +type+'s providers, each
     # containing :name and :doc.
     def provider_doc(type)
-      returning([]) do |providers|
+      [].tap do |providers|
         type.providers.sort_by{ |o| o.to_s }.each do |prov|
           providers.push(:name => prov, :doc => type.provider(prov).doc)
         end

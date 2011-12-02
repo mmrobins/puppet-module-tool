@@ -17,7 +17,7 @@ module Puppet::Module::Tool
     # TODO: Add checksum support.
     # TODO: Add error checking.
     def retrieve(url)
-      returning(path + File.basename(url.to_s)) do |cached_file|
+      (path + File.basename(url.to_s)).tap do |cached_file|
         uri = normalize(url)
         unless cached_file.file?
           if uri.scheme == 'file'
