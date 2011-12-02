@@ -1,5 +1,3 @@
-require 'net/http/post/multipart'
-
 module Puppet::Module::Tool
 
   module Applications
