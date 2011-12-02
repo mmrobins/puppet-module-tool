@@ -148,7 +148,6 @@ end
 require 'puppet/module/tool/applications'
 require 'puppet/module/tool/cache'
 require 'puppet/module/tool/checksums'
-require 'puppet/module/tool/cli'
 require 'puppet/module/tool/contents_description'
 require 'puppet/module/tool/dependency'
 require 'puppet/module/tool/metadata'

@@ -1,5 +1,3 @@
-require 'thor'
-
 # = CLI
 #
 # This class is used by the command-line program to dispatch actions.
@@ -56,15 +54,6 @@ class Puppet::Module::Tool::CLI < Thor
 #    Puppet::Module::Tool::Applications::Unreleaser.run(module_name,
 #                                                       options)
 #  end
-
-  desc "install MODULE_NAME_OR_FILE [OPTIONS]", "Install a module (eg, 'user-modname') from a repository or file"
-  method_option :version, :alias => :v, :desc => "Version to install (can be a requirement, eg '>= 1.0.3', defaults to latest version)"
-  method_option :force, :alias => :f, :type => :boolean, :desc => "Force overwrite of existing module, if any"
-  method_option :install_dir, :alias => :i, :desc => "The directory into which modules are installed"
-  method_option_repository
-  def install(name)
-    Puppet::Module::Tool::Applications::Installer.run(name, options)
-  end
 
   desc "search TERM", "Search the module repository for a module matching TERM"
   method_option_repository
